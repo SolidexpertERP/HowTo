@@ -1,0 +1,1 @@
+Chodzi o to aby codeunit implementował zawsze wszystkie możliwe funckje dostępne w interfejsach. A co za tym idzie należy je odpowiednio segregować. Pokazane jest to w Interface Segregation Principle

@@ -1,0 +1,1 @@
+Chodzi o to aby klasa/Codeunit miał jedną odpowiedzialność, impementacja Single Responsibility Principle jest w Open Close Principle

@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Apka Test",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "OnPrem",
+            "server": "http://NewTest",
+            "serverInstance": "BC",
+            "authentication": "UserPassword",
+            "startupObjectId": 9301,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "tenant": "default", "schemaUpdateMode": "ForceSync"
+        }
+    ]
+}
