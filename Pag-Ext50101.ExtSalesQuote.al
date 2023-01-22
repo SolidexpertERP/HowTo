@@ -20,6 +20,20 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
                     Message(TxtMsg);
                 end;
             }
+            action(SendNotyf)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    Notyfication: Codeunit "Notyfication Document";
+                begin
+                    Notyfication.SendDocument(Rec, Enum::"Notyfication Type"::"E-mail");
+                end;
+            }
         }
     }
 }

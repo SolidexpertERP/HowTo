@@ -1,3 +1,8 @@
+/// <summary>
+/// Codeunit odpowiedzialny za budowanie elementu. W sekci var deklarowane są obiekty które chcemy utworzyć.
+/// Poszczególne procedury odpowiadają za zbudowanie cząstki obiektu. Finalnie metoda Build zwraca utworzony obiekt.
+/// Przydatne do tworzenia różnego rodzaju eksportów, które budujemy z elementów aby finalnie uzyskać gotowy plik. 
+/// </summary>
 codeunit 50112 "Invoice Builder"
 {
     var
