@@ -34,6 +34,29 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
                     Notyfication.SendDocument(Rec, Enum::"Notyfication Type"::"E-mail");
                 end;
             }
+            action(SetAndGetText)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    TwoInt: Codeunit "Two Interface Manahament";
+                    ISet: Interface "ISet Object";
+                    IGet: Interface "IGet Object";
+                    Txt: Text;
+                begin
+                    ISet := TwoInt;
+                    IGet := TwoInt;
+
+                    ISet.SetText('SOLIDEXPERT');
+                    IGet.GetText(Txt);
+
+                    Message(Txt);
+                end;
+            }
         }
     }
 }
