@@ -34,6 +34,20 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
                     Notyfication.SendDocument(Rec, Enum::"Notyfication Type"::"E-mail");
                 end;
             }
+            action(SendNotyf2)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    Notyfication: Codeunit "Master Managament";
+                begin
+                    Notyfication.DocumentNotification(Rec);
+                end;
+            }
             action(SetAndGetText)
             {
                 ApplicationArea = All;
