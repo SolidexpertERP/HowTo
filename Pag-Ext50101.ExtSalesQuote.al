@@ -71,6 +71,20 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
                     Message(Txt);
                 end;
             }
+            action(CreateSalesOrder)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    CreateSalesOrder: Codeunit "Create Sales Order KPI";
+                begin
+                    CreateSalesOrder.CreateSalesOrder();
+                end;
+            }
         }
     }
 }
