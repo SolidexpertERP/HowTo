@@ -1,6 +1,6 @@
 /// <summary>
 /// To zadanie ma na celu sprawdzenie czy jeżeli na tabeli dodamy walidację która wyświetla jakiś Message użytkownikowi 
-/// 
+/// to czy podczas tworzenia dokumentu z poziomu kodu, komunikat pojawi się po uruchomienu Page
 /// </summary>
 codeunit 50130 "Create Sales Order KPI"
 {
