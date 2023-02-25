@@ -38,6 +38,20 @@ table 50101 "Table Update Page From Table"
                 CU.RunUpdatePage();
             end;
         }
+        field(3; No; Integer)
+        {
+            Caption = 'No';
+            DataClassification = ToBeClassified;
+            AutoIncrement = true;
+        }
+    }
+
+    keys
+    {
+        key(PK; No)
+        {
+
+        }
     }
 
     [IntegrationEvent(false, false)]

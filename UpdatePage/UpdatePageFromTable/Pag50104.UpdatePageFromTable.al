@@ -12,6 +12,11 @@ page 50104 "Update Page From Table"
         {
             group(General)
             {
+                field(No; Rec.No)
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                }
                 field("Field A"; Rec."Field A")
                 {
                     ApplicationArea = All;
@@ -31,6 +36,8 @@ page 50104 "Update Page From Table"
                 field("Result"; Result)
                 {
                     ApplicationArea = All;
+                    Editable = false;
+                    Caption = 'Ilość odświeżeń strony';
                 }
 
                 field("Field C"; FieldTxt)
@@ -62,10 +69,27 @@ page 50104 "Update Page From Table"
         }
     }
 
+    actions
+    {
+        area(Processing)
+        {
+            action(ShowPopUp)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    CurrPage.UpdatePage.ShopPopUp();
+                end;
+            }
+        }
+    }
+
     trigger OnAfterGetCurrRecord()
     begin
-        Message('OnAfterGetCurrRecord()');
-        Result += 100;
+        Result += 1;
         CU.SetControlAddIn(CurrPage.UpdatePage);
     end;
 
@@ -79,18 +103,22 @@ controladdin UpdatePage
 {
     Scripts = 'UpdatePage/UpdatePageFromTable/UpdatePage.js';
     StartupScript = 'UpdatePage/UpdatePageFromTable/UpdateMain.js';
+    Images = 'UpdatePage/UpdatePageFromTable/car2.jpg';
 
-    HorizontalShrink = true;
-    HorizontalStretch = true;
-    MinimumHeight = 100;
-    MinimumWidth = 100;
-    RequestedHeight = 100;
-    RequestedWidth = 100;
-    VerticalShrink = true;
+    RequestedHeight = 400;
+    MinimumHeight = 400;
+    MaximumHeight = 400;
+    RequestedWidth = 400;
+    MinimumWidth = 400;
+    MaximumWidth = 400;
     VerticalStretch = true;
+    VerticalShrink = true;
+    HorizontalStretch = true;
+    HorizontalShrink = true;
 
     event ControlAddInReady();
     event UpdateMyPage();
     event ReturnFromJS(Txt: Text);
     procedure CallToJS(Msg: Text);
+    procedure ShopPopUp();
 }
