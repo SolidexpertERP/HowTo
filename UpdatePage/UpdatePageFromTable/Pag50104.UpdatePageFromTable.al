@@ -81,7 +81,7 @@ page 50104 "Update Page From Table"
 
                 trigger OnAction()
                 begin
-                    CurrPage.UpdatePage.ShopPopUp();
+                    CurrPage.UpdatePage.ShowPopUp();
                 end;
             }
         }
@@ -120,5 +120,5 @@ controladdin UpdatePage
     event UpdateMyPage();
     event ReturnFromJS(Txt: Text);
     procedure CallToJS(Msg: Text);
-    procedure ShopPopUp();
+    procedure ShowPopUp();
 }
