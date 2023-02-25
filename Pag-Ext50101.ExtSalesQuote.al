@@ -85,6 +85,81 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
                     CreateSalesOrder.CreateSalesOrder();
                 end;
             }
+            action(Testowanko)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                begin
+                    Test();
+                end;
+            }
+            action(WorkWithError)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                begin
+                    Codeunit.Run(Codeunit::"Work With Error", Rec);
+                end;
+            }
+            action(WorkWithSplitText)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    TxtCU: Codeunit "Work With Split Text";
+                begin
+                    TxtCU.SplitText();
+                end;
+            }
+            action(AktualizujPage)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    CU: Codeunit "Update Page From Table";
+                begin
+                    CU.RunUpdatePage();
+                end;
+            }
         }
     }
+
+    local procedure Test()
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        SalesLine := SearchSalesLine();
+        if SalesLine."Document No." = '' then
+            Message('Errorus potengus');
+    end;
+
+    local procedure SearchSalesLine(): Record "Sales Line"
+    var
+        Line: Text;
+        LineNo: Integer;
+    begin
+        Line := '00010';
+        Evaluate(LineNo, Line);
+        Message(Format(LineNo));
+
+        Line := '00110';
+        Evaluate(LineNo, Line);
+        Message(Format(LineNo));
+    end;
 }
