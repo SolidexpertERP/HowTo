@@ -137,6 +137,20 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
                     CU.RunUpdatePage();
                 end;
             }
+            action("Dodaj zdjęcie do ControlAddIn")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    CU: Codeunit "Update Page From Table";
+                begin
+                    CU.AddPhoto();
+                end;
+            }
         }
     }
 

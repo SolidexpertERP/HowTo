@@ -121,4 +121,5 @@ controladdin UpdatePage
     event ReturnFromJS(Txt: Text);
     procedure CallToJS(Msg: Text);
     procedure ShowPopUp();
+    procedure AddPhoto();
 }

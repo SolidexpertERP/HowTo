@@ -16,6 +16,11 @@ codeunit 50133 "Update Page From Table"
         JSGlobal.CallToJS('Dzwonię z Codeunitu!!');
     end;
 
+    internal procedure AddPhoto()
+    begin
+        JSGlobal.AddPhoto();
+    end;
+
     [EventSubscriber(ObjectType::Table, Database::"Table Update Page From Table", 'OnAfterSetField', '', false, false)]
     local procedure OnAfterSetField()
     begin
