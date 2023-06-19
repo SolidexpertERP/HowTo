@@ -15,6 +15,15 @@ pageextension 50103 "BE Customer Card" extends "Customer Card"
                     WorkWithRecRefMgt.UpdateCity(Rec, NewCity, Rec.FieldNo(City));
                 end;
             }
+            action("Create Document")
+            {
+                trigger OnAction()
+                var
+                    CreateDoc: Codeunit "Create Document Managament";
+                begin
+                    CreateDoc.CreateShippingDocument(Rec);
+                end;
+            }
         }
     }
 }

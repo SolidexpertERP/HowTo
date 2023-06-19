@@ -4,6 +4,15 @@ pageextension 50100 "Ext Sales Invoice" extends "Sales Invoice"
     {
         addafter("&Invoice")
         {
+            action("Create Document")
+            {
+                trigger OnAction()
+                var
+                    CreateDoc: Codeunit "Create Document Managament";
+                begin
+                    CreateDoc.CreateShippingDocument(Rec);
+                end;
+            }
             action(ShowSingleton)
             {
                 ApplicationArea = All;

@@ -4,6 +4,15 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
     {
         addafter("&View")
         {
+            action("Create Document")
+            {
+                trigger OnAction()
+                var
+                    CreateDoc: Codeunit "Create Document Managament";
+                begin
+                    CreateDoc.CreateShippingDocument(Rec);
+                end;
+            }
             action(VATStatus)
             {
                 ApplicationArea = All;
