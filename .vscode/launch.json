@@ -9,7 +9,7 @@
             "server": "http://NewTest",
             "serverInstance": "BC",
             "authentication": "UserPassword",
-            "startupObjectId": 50105,
+            "startupObjectId": 22,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
