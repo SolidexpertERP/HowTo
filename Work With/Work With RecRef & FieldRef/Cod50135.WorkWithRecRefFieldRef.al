@@ -23,8 +23,8 @@ codeunit 50135 "Work With RecRef FieldRef"
     begin
         RecRef.Open(Rec.RecordId.TableNo);
         RecRef.Copy(Rec);
-        DataTypeMgt.FindFieldByName(RecRef, FldRefNo, 'No.');
-        FldRefNo.SetFilter('ALA');
+        if DataTypeMgt.FindFieldByName(RecRef, FldRefNo, 'No.') then
+            FldRefNo.SetFilter('10000');
         RecRef.SetTable(Rec);
     end;
 
@@ -36,8 +36,8 @@ codeunit 50135 "Work With RecRef FieldRef"
     begin
         RecRef.Open(Rec.RecordId.TableNo);
         RecRef.Copy(Rec);
-        DataTypeMgt.FindFieldByName(RecRef, FldRefNo, 'Name');
-        FldRefNo.SetFilter('ALA');
+        if DataTypeMgt.FindFieldByName(RecRef, FldRefNo, 'Name') then
+            FldRefNo.SetFilter('Adatum Corporation');
         RecRef.SetTable(Rec);
     end;
 
@@ -49,10 +49,12 @@ codeunit 50135 "Work With RecRef FieldRef"
         FldRefNo: FieldRef;
     begin
         DataTypeMgt.GetRecordRef(RecVariant, RecRef);
-        DataTypeMgt.FindFieldByName(RecRef, FldRefNo, 'Name');
-        FldRefNo.SetFilter('ALA');
+        if DataTypeMgt.FindFieldByName(RecRef, FldRefNo, 'Name') then
+            FldRefNo.SetFilter('ALA');
         RecRef.GetTable(OutVariant);
     end;
+
+
 
     [EventSubscriber(ObjectType::Page, Page::"Customer List", 'OnOpenPageEvent', '', true, true)]
     local procedure SetFilterCustomerList(var Rec: Record Customer)
@@ -60,5 +62,43 @@ codeunit 50135 "Work With RecRef FieldRef"
         SetFilter(Rec);
         SetFilter2(Rec);
         //Rec := SetFilterVariant(Rec); // <- przez Variant nie działa...
+    end;
+
+    procedure FindLineAndCheck(FromDoc: Variant)
+    var
+        DataTypeMgt: Codeunit "Data Type Management";
+        DocumentToCheck: RecordRef;
+    begin
+        DataTypeMgt.GetRecordRef(FromDoc, DocumentToCheck);
+        SearchAndCheckLine(DocumentToCheck);
+    end;
+
+    local procedure SearchAndCheckLine(DocumentToCheck: RecordRef)
+    var
+        DataTypeMgt: Codeunit "Data Type Management";
+        LineToCheck: RecordRef;
+        FRDoucmentNoLine: FieldRef;
+        FRDoucmentNoHeader: FieldRef;
+        DocumentNo: Code[20];
+        SalesLine: Record "Sales Line";
+    begin
+        if not DataTypeMgt.FindFieldByName(DocumentToCheck, FRDoucmentNoHeader, 'No.') then
+            exit;
+
+        case DocumentToCheck.Number of
+            Database::"Sales Header":
+                LineToCheck.Open(Database::"Sales Line");
+            else
+                exit;
+        end;
+
+        DataTypeMgt.FindFieldByName(LineToCheck, FRDoucmentNoLine, 'Document No.');
+        FRDoucmentNoLine.SetRange(FRDoucmentNoHeader.Value);
+
+        if LineToCheck.FindSet() then
+            repeat
+                SalesLine.Get(LineToCheck.RecordId);
+                Message('%1 %2 %3', SalesLine."Document No.", SalesLine."Line No.", SalesLine."No.");
+            until LineToCheck.Next() < 1;
     end;
 }
