@@ -24,6 +24,37 @@ pageextension 50103 "BE Customer Card" extends "Customer Card"
                     CreateDoc.CreateShippingDocument(Rec);
                 end;
             }
+            action("Create Copy Customer")
+            {
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    MyCU: Codeunit "My Codeunit Managament";
+                begin
+                    Message(Rec."Name 2");
+                    MyCU.Run(Rec);
+                    Message(Rec."Name 2");
+                end;
+            }
+            action("Add Two")
+            {
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    A: Decimal;
+                    B: Decimal;
+                    Sum: Decimal;
+                begin
+                    A := 1;
+                    B := -3;
+                    Sum := A + B;
+                    Message('%1+%2=%3', A, B, Sum);
+                end;
+            }
         }
     }
 }
