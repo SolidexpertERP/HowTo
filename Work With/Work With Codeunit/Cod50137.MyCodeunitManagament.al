@@ -7,6 +7,7 @@ codeunit 50137 "My Codeunit Managament"
         Customer.Copy(Rec);
         CreateCopyCustomer();
         Rec.Copy(Customer);
+        Error('Upssss....error');
     end;
 
     var

@@ -34,6 +34,25 @@ pageextension 50103 "BE Customer Card" extends "Customer Card"
                     MyCU: Codeunit "My Codeunit Managament";
                 begin
                     Message(Rec."Name 2");
+                    // Takie wywołanie CU spowoduje, że napotkanie w CU Error, zadziała jak TryFunction i nie wyświetli błędu, tylko zwróci false
+                    if MyCU.Run(Rec) then
+                        Message('Wykonał się CU')
+                    else
+                        Message('Coś poszło nie tak....');
+                    Message(Rec."Name 2");
+                end;
+            }
+            action("Create Copy Customer2")
+            {
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    MyCU: Codeunit "My Codeunit Managament";
+                begin
+                    Message(Rec."Name 2");
+                    // Takie wywołanie CU, spowoduje, że zostanie wyświetlony Error znajdujący się w CU
                     MyCU.Run(Rec);
                     Message(Rec."Name 2");
                 end;
