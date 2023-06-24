@@ -64,6 +64,10 @@ codeunit 50135 "Work With RecRef FieldRef"
         //Rec := SetFilterVariant(Rec); // <- przez Variant nie działa...
     end;
 
+    /// <summary>
+    /// Funkcja do dekodowania Variant na RecRef
+    /// </summary>
+    /// <param name="FromDoc"></param>
     procedure FindLineAndCheck(FromDoc: Variant)
     var
         DataTypeMgt: Codeunit "Data Type Management";
@@ -73,6 +77,10 @@ codeunit 50135 "Work With RecRef FieldRef"
         SearchAndCheckLine(DocumentToCheck);
     end;
 
+    /// <summary>
+    /// Funkcja która na podstawie RecRef sprawdza jaka to tabel i otwiera jej wiersze
+    /// </summary>
+    /// <param name="DocumentToCheck"></param>
     local procedure SearchAndCheckLine(DocumentToCheck: RecordRef)
     var
         DataTypeMgt: Codeunit "Data Type Management";
