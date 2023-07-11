@@ -4,6 +4,20 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
     {
         addafter("&View")
         {
+            action("Show Msg From RecordID")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    WorkWithRef: Codeunit "Work With RecRef FieldRef";
+                begin
+                    WorkWithRef.ShowMessage(Rec.RecordId);
+                end;
+            }
             action("Find Line Doc And Check")
             {
                 ApplicationArea = All;

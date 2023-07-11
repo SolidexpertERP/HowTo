@@ -54,7 +54,20 @@ codeunit 50135 "Work With RecRef FieldRef"
         RecRef.GetTable(OutVariant);
     end;
 
+    procedure ShowMessage(Document: Variant)
+    var
+        DataMgt: Codeunit "Data Type Management";
+        IDRecord: RecordId;
+        RecRef: RecordRef;
+        FldRef: FieldRef;
+    begin
+        if Document.IsRecordId then
+            IDRecord := Document;
 
+        RecRef := IDRecord.GetRecord();
+        DataMgt.FindFieldByName(RecRef, FldRef, 'No.');
+        Message('%1', FldRef.Value);
+    end;
 
     [EventSubscriber(ObjectType::Page, Page::"Customer List", 'OnOpenPageEvent', '', true, true)]
     local procedure SetFilterCustomerList(var Rec: Record Customer)
@@ -108,5 +121,33 @@ codeunit 50135 "Work With RecRef FieldRef"
                 SalesLine.Get(LineToCheck.RecordId);
                 Message('%1 %2 %3', SalesLine."Document No.", SalesLine."Line No.", SalesLine."No.");
             until LineToCheck.Next() < 1;
+    end;
+
+    /// <summary>
+    /// Funkcja mająca na celu przyjąć dowolny Variant i sprowadzić go do RecRef
+    /// </summary>
+    /// <param name="Document"></param>
+    procedure WorkWithVariant(Document: Variant)
+    var
+        DataMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        FromTxt: Text;
+    begin
+        if Document.IsRecordRef then begin
+            RecRef := Document;
+            FromTxt := 'IsRecordRef';
+        end;
+
+        if Document.IsRecord then begin
+            DataMgt.GetRecordRef(Document, RecRef);
+            FromTxt := 'IsRecord';
+        end;
+
+        if Document.IsRecordId then begin
+            RecRef.Get(Document);
+            FromTxt := 'IsRecordId';
+        end;
+
+        Message('RecRef.Name: %1 (%2)', RecRef.Name, FromTxt);
     end;
 }
