@@ -4,6 +4,46 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
     {
         addafter("&Order Confirmation")
         {
+
+            action("Calc Date MS Example")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Date";
+                begin
+                    WorkWith.CalculateDate2();
+                end;
+            }
+            action("Calc Last 12 Month Date")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Date";
+                begin
+                    WorkWith.CalculateDate();
+                end;
+            }
+            action("Calc Previous 12 Month Date")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Date";
+                begin
+                    WorkWith.CalculateDate1();
+                end;
+            }
             action("Pad String")
             {
                 ApplicationArea = All;
