@@ -5,6 +5,32 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
         addafter("&Order Confirmation")
         {
 
+            action("Work With Variant")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Variable";
+                begin
+                    WorkWith.WorkWithVariant();
+                end;
+            }
+            action("Calc Temp Table")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Temporary Table";
+                begin
+                    WorkWith.CalculateData();
+                end;
+            }
             action("Calc Date MS Example")
             {
                 ApplicationArea = All;

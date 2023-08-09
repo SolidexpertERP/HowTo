@@ -20,7 +20,7 @@ codeunit 50132 "Work With Split Text"
     begin
         ValInDecimal := 333555.88;
         ValInInteger := Round(ValInDecimal, 2, '=');
-        ValInTxt := Format(ValInInteger);
+        ValInTxt := Format(ValInInteger, 0, '<Integer><Sign>');
         Message('"%1"', ValInTxt);
     end;
 
