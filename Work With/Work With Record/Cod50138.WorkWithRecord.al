@@ -49,4 +49,18 @@ codeunit 50138 "Work With Record"
             SalesHeader.ModifyAll("Assigned User ID", Val3);
         end;
     end;
+
+    procedure TransferFields()
+    var
+        FromPurchaseLine: Record "Purchase Line";
+        NewPurchaseLine: Record "Purchase Line";
+    begin
+        NewPurchaseLine.Init();
+        NewPurchaseLine.InitNewLine(NewPurchaseLine);
+        NewPurchaseLine."Line No." += 10000; // PK3
+        NewPurchaseLine.Validate("Document Type", NewPurchaseLine."Document Type"::Order); // PK1
+        NewPurchaseLine.Validate("Document No.", 'ZZ/2023/0001'); // PK2
+        NewPurchaseLine.TransferFields(FromPurchaseLine, false); // Transferuje wszystkie pola oprócz pól PK
+        NewPurchaseLine.Insert(true);
+    end;
 }
