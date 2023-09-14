@@ -51,4 +51,25 @@ codeunit 50139 "Work With Date"
         Message(RefDateTxt + Expr1Txt + Expr2Txt + Expr3Txt,
           RefDate, Expr1, Date1, Expr2, Date2, Expr3, Date3);
     end;
+
+    /// <summary>
+    /// Praca z dedykowaną tabelą licząca dni, miesiące, lata
+    /// </summary>
+    procedure LoopAfterMonth()
+    var
+        RecDate: Record Date;
+        StartDate: Date;
+        EndDate: Date;
+    begin
+        StartDate := 20221101D;
+        EndDate := 20230801D;
+
+        RecDate.RESET;
+        RecDate.SETRANGE("Period Type", RecDate."Period Type"::Month);
+        RecDate.SETRANGE("Period Start", StartDate, EndDate);
+        if RecDate.FindSet() then
+            repeat
+                Message('%1 %2', RecDate."Period Start", RecDate."Period Name");
+            until RecDate.Next() < 1;
+    end;
 }
