@@ -85,4 +85,43 @@ codeunit 50138 "Work With Record"
     end;
 
 
+    /// <summary>
+    /// Zastosowanie filtru: 
+    /// WHERE "Document Type" = SalesHeader."Document Type"::Order AND ("No." = '101001' OR "Sell-to Customer No." = '30000' OR "Sell-to Customer Name" = 'Relecloud')
+    /// </summary>
+    procedure OrFilter()
+    var
+        SalesHeader: Record "Sales Header";
+    begin
+        SalesHeader.FilterGroup(2);
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+        SalesHeader.FilterGroup(-1);
+        SalesHeader.SetFilter("No.", '101001');
+        SalesHeader.SetFilter("Sell-to Customer No.", '30000');
+        SalesHeader.SetFilter("Sell-to Customer Name", 'Relecloud');
+        if SalesHeader.FindSet() then
+            repeat
+                Message(SalesHeader."No.");
+            until SalesHeader.Next() < 1;
+    end;
+
+    internal procedure AdHockTest()
+    var
+        SalesHeader: Record "Sales Header";
+    begin
+        SalesHeader.FilterGroup(2);
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+        SalesHeader.FilterGroup(-1);
+        SalesHeader.SetFilter("No.", '101001');
+        SalesHeader.SetFilter("Sell-to Customer No.", '30000');
+        SalesHeader.SetFilter("Sell-to Customer Name", 'Relecloud');
+        if SalesHeader.FindSet() then
+            repeat
+                Message(SalesHeader."No.");
+            until SalesHeader.Next() < 1;
+    end;
+
+
+
+
 }
