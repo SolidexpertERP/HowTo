@@ -3,6 +3,20 @@
 /// </summary>
 codeunit 50139 "Work With Date"
 {
+    /// <summary>
+    /// Formatowanie daty do różnych formatów zgodnie z dokumentacją MS
+    /// https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/devenv-format-property
+    /// </summary>
+    procedure FormatDate()
+    var
+        CurrentDateTime: DateTime;
+        DateInTxt: Text;
+    begin
+        CurrentDateTime := System.CurrentDateTime;
+        DateInTxt := Format(CurrentDateTime, 16, '<Day,2><Month Text,3><Year4>_<Hours24,2><Minutes,2><Seconds,2>');
+        Message(DateInTxt);
+    end;
+
     procedure CalculateDate()
     var
         EndDate: Date;
