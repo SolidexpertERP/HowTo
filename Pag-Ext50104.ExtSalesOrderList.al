@@ -18,6 +18,19 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
                     WorkWith.WorkWithVariant();
                 end;
             }
+            action("Format Date")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Date";
+                begin
+                    WorkWith.FormatDate();
+                end;
+            }
             action("Calc Temp Table")
             {
                 ApplicationArea = All;
@@ -81,19 +94,6 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
                     WorkWith: Codeunit "Work With Split Text";
                 begin
                     WorkWith.PadString();
-                end;
-            }
-            action("Format Txt")
-            {
-                ApplicationArea = All;
-                Promoted = true;
-                PromotedCategory = Process;
-
-                trigger OnAction()
-                var
-                    WorkWith: Codeunit "Work With Split Text";
-                begin
-                    WorkWith.FormatTxt();
                 end;
             }
             action("Encoding Table Name")
