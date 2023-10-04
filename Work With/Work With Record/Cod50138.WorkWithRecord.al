@@ -63,4 +63,26 @@ codeunit 50138 "Work With Record"
         NewPurchaseLine.TransferFields(FromPurchaseLine, false); // Transferuje wszystkie pola oprócz pól PK
         NewPurchaseLine.Insert(true);
     end;
+
+    /// <summary>
+    /// Sprawdzenie czy przekazany do procedury var PurchLine, podczas wykonywania pętli, w momencie kiedy natrafi na wiersz numer 30000
+    /// zatrzyma się i zwróci wiersz na którym się zatrzymał, czy cały set danych z filtru założonego przed pętlą
+    /// ODP: Tak zwraca konktrtny wiersz na którym się zatrzymał
+    /// </summary>
+    /// <param name="PurchLine"></param>
+    internal procedure LineNoFilter(var PurchLine: Record "Purchase Line")
+    var
+        LineNoTxt: Text;
+    begin
+        LineNoTxt := '30000';
+        PurchLine.SetRange("Document Type", PurchLine."Document Type"::Order);
+        PurchLine.SetRange("Document No.", '106001');
+        if PurchLine.FindSet() then
+            repeat
+                if LineNoTxt = Format(PurchLine."Line No.", 5) then
+                    exit;
+            until PurchLine.Next() < 1;
+    end;
+
+
 }
