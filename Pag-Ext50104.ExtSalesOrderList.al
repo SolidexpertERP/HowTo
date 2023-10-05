@@ -172,6 +172,19 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
         }
     }
 
+    trigger OnOpenPage()
+    var
+        SalesHdr: Record "Sales Header";
+    begin
+        SalesHdr.FilterGroup(1);
+        SalesHdr.Setrange("Document Type", SalesHdr."Document Type"::Order);
+        SalesHdr.FilterGroup(-1);
+        SalesHdr.SetFilter("No.", '101001');
+        SalesHdr.SetFilter("Sell-to Customer No.", '30000');
+        SalesHdr.SetFilter("Sell-to Customer Name", 'Relecloud');
+        Rec.Copy(SalesHdr);
+    end;
+
     // trigger OnOpenPage()
     // var
     //     SalesHeader: Record "Sales Header";

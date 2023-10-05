@@ -2,14 +2,73 @@ page 50107 "Test Page"
 {
     ApplicationArea = All;
     Caption = 'Test Page';
-    PageType = List;
-    UsageCategory = Lists;
+    PageType = Card;
+    UsageCategory = Documents;
 
     layout
     {
         area(content)
         {
+            group(General)
+            {
+                Caption = 'Group General Normal Widh';
 
+                field(Field001; Field001)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Field001';
+
+                    trigger OnValidate()
+                    var
+                        Label: Label '';
+                    begin
+                        LabelCaptionTxt := Field001.Replace('AS', Label);
+                    end;
+                }
+                label(MyLabel)
+                {
+                    CaptionClass = LabelCaptionTxt;
+                    ApplicationArea = All;
+                }
+            }
+            cuegroup("Wide Group")
+            {
+                Caption = 'Wide Group';
+
+                field(Field002; 1)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Pole obrazkowe 1';
+                    Image = Cash;
+
+                    trigger OnDrillDown()
+                    var
+                        SalesHdr: Record "Sales Header";
+                    begin
+                        SalesHdr.FindFirst();
+                        Page.Run(Page::"Sales Order", SalesHdr);
+                    end;
+
+                }
+                field(Field003; 2)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Pole obrazkowe 2';
+                    Image = Heart;
+                }
+                field(Field004; 3)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Pole obrazkowe 3';
+                    Image = Chart;
+                }
+                field(Field005; 10)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Pole obrazkowe 4';
+                    Image = Folder;
+                }
+            }
         }
     }
 
@@ -17,7 +76,7 @@ page 50107 "Test Page"
     {
         area(Processing)
         {
-            action("Filtr LineNo = 10*")
+            action("Ad Hock Function")
             {
                 ApplicationArea = All;
                 Promoted = true;
@@ -26,12 +85,16 @@ page 50107 "Test Page"
                 trigger OnAction()
                 var
                     WorkWith: Codeunit "Work With Record";
-                    PurchLine: Record "Purchase Line";
                 begin
-                    WorkWith.LineNoFilter(PurchLine);
-                    Message('Line No: %1, No.: %2', PurchLine."Line No.", PurchLine."No.");
+                    WorkWith.AdHockTest();
                 end;
             }
         }
     }
+
+
+
+    var
+        Field001: Text[50];
+        LabelCaptionTxt: Text;
 }
