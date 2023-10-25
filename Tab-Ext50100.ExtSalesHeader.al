@@ -29,6 +29,8 @@ tableextension 50100 "Ext Sales Header" extends "Sales Header"
         WorkWithRecord: Codeunit "Work With Record";
     begin
         WorkWithRecord.HowWorkVariableWithVar(Rec);
-        Message(Rec."My Field Test");
+        WorkWithRecord.CompareRecord(Rec);
+        //Message(Rec."My Field Test");
+
     end;
 }
