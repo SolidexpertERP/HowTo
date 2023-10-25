@@ -121,6 +121,66 @@ codeunit 50138 "Work With Record"
             until SalesHeader.Next() < 1;
     end;
 
+    procedure WorkWithTestField()
+    var
+        SalesHeader: Record "Sales Header";
+    begin
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+        SalesHeader.FindFirst();
+        SalesHeader.TestField(Status, SalesHeader.Status::Released, ErrorInfo.Create('Jakiś tam mój błąd'));
+    end;
+
+    /// <summary>
+    /// Procedura mająca na celu sprawdzenie jak zadziała przekazywanie zmiennej z var i bez var i odświeżanie jej danymi z bazy danych
+    /// </summary>
+    /// <param name="SalesHeader"></param>
+    procedure HowWorkVariableWithVar(var SalesHeader: Record "Sales Header")
+    begin
+        // Ustawiam na Step 1
+        SalesHeader."My Field Test" := 'Step 1';
+        // Ustawienie pola na Step 2 procedurą bez Var i Modify()
+        SetMyFiled(SalesHeader);
+        // Jest "Step 1" ponieważ utracono to co ustawiono w proc. SetMyFiled ponieważ przekazano tam bez Var i bez Modify()
+        Message(SalesHeader."My Field Test");
+        // Odświeżenia Rec aktualnymi danymi z bazy danych i sprawdzenie czy aby na pewno utracono dane i jest Step 4 czyli to co jest w bazie danych, czyli przywracamy record do stanu pierwotnego bo to tej pory nie było nigdzie Modify()
+        SalesHeader.Get(SalesHeader.RecordId);
+        Message(SalesHeader."My Field Test");
+        // Ustawienie pola na Step 2 bez Var ale z Modify() 
+        SetMyFiled1(SalesHeader);
+        // Odświeżenia Rec aktualnymi danymi z bazy danych 
+        SalesHeader.Get(SalesHeader.RecordId);
+        // Jest Step 2 pomimo, że przekazano do SetMyFiled1 bez var, ale zrobiono tam modify a następnie odświeżno sobie record aktualnymi danymi z bazy danych
+        Message(SalesHeader."My Field Test");
+        SalesHeader."My Field Test" := 'Step 3';
+        SetMyFiled2(SalesHeader);
+        Message(SalesHeader."My Field Test"); // Jest "Step 4" czyli wartość ustawiona w proc. SetMyFiled2 bo przekazano tam z Var
+    end;
+
+    local procedure SetMyFiled(SalesHeader: Record "Sales Header")
+    begin
+        // Sprawdzenie jaką wartość ma pole "My Field Test" które ustawiono we wcześniejszej proc.
+        // Jest: 'Step 1' ponieważ przekazano kopię stanu obecnego, pomimo braku Modify() w poprzedniej procedurze
+        Message(SalesHeader."My Field Test");
+        SalesHeader."My Field Test" := 'Step 2';
+    end;
+
+    local procedure SetMyFiled1(SalesHeader: Record "Sales Header")
+    begin
+        // Sprawdzenie jaką wartość ma pole "My Field Test" które ustawiono we wcześniejszej proc.
+        // Jest: 'Step 1' ponieważ przekazano kopię stanu obecnego, pomimo braku Modify() w poprzedniej procedurze
+        Message(SalesHeader."My Field Test");
+        SalesHeader."My Field Test" := 'Step 2';
+        SalesHeader.Modify();
+    end;
+
+    local procedure SetMyFiled2(var SalesHeader: Record "Sales Header")
+    begin
+        // Sprawdzenie jaką wartość ma pole "My Field Test" które ustawiono we wcześniejszej proc.
+        // Powinno być: 'Step 1'
+        Message(SalesHeader."My Field Test");
+        SalesHeader."My Field Test" := 'Step 4';
+    end;
+
 
 
 
