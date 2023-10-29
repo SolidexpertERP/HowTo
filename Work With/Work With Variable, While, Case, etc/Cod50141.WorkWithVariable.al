@@ -64,7 +64,7 @@ codeunit 50141 "Work With Variable"
 
             if NextStep = 2 then begin
                 Message('Next Step: %1', NextStep);
-                NextStep := 999;
+                NextStep := 999; // Pomijamy sobie wszystkie następne kroki
             end;
 
             if NextStep = 3 then begin
@@ -75,6 +75,23 @@ codeunit 50141 "Work With Variable"
             if NextStep = 4 then begin
                 Message('Next Step: %1', NextStep);
             end;
+        end;
+    end;
+
+    procedure ReadObjectType()
+    begin
+        ReadObjTyp(ObjectType::Page, Page::"Sales Order");
+    end;
+
+    local procedure ReadObjTyp(ObjTyp: ObjectType; ObjectId: Integer)
+    begin
+        case ObjTyp of
+            ObjectType::Codeunit:
+                Message('Im %1', ObjTyp);
+            ObjectType::Page:
+                begin
+                    Page.Run(ObjectId);
+                end;
         end;
     end;
 }

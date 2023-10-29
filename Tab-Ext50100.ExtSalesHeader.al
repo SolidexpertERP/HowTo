@@ -22,6 +22,13 @@ tableextension 50100 "Ext Sales Header" extends "Sales Header"
             Caption = 'My Comunicat Field 2';
             DataClassification = ToBeClassified;
         }
+        field(50103; "Sales Header Counter"; Decimal)
+        {
+            Caption = 'Sales Header Counter';
+            FieldClass = FlowField;
+            Editable = false;
+            CalcFormula = sum("Sales Line".Amount where("Document Type" = const(Order)));
+        }
     }
 
     trigger OnModify()

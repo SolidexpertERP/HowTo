@@ -86,7 +86,21 @@ page 50107 "Test Page"
                 var
                     WorkWith: Codeunit "Work With Record";
                 begin
-                    WorkWith.AdHockTest();
+                    WorkWith.WorkWithTestField();
+                end;
+            }
+
+            action("Ad Hock Function 2")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With Variable";
+                begin
+                    WorkWith.ReadObjectType();
                 end;
             }
         }
