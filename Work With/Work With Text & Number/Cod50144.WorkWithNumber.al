@@ -15,10 +15,10 @@ codeunit 50144 "Work With Number"
     begin
         NumberA := -1.00;
         NumberB := 3.00;
-        RevNumberA := -NumberA;
-        RevNumberB := -NumberB;
-        Sum1 := NumberA + RevNumberA;
-        Sum2 := NumberB + RevNumberB;
+        RevNumberA := -NumberA; // RevNumberA = 1.00
+        RevNumberB := -NumberB; // RevNumberB = -3.00
+        Sum1 := NumberA + RevNumberA; // Sum1 = -1 + 1 = 0
+        Sum2 := NumberB + RevNumberB; // Sum2 = 3 + -3 = 0
         MessageTxt += StrSubstNo('NumberA: %1\', NumberA);
         MessageTxt += StrSubstNo('NumberB: %1\', NumberB);
         MessageTxt += StrSubstNo('RevNumberA: %1\', RevNumberA);
