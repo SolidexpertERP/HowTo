@@ -43,12 +43,27 @@ page 50106 "Osoba Import"
             action(ImportCSV)
             {
                 ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
 
                 trigger OnAction()
                 var
                     CUImport: Codeunit "Osoba Import";
                 begin
                     CUImport.ImportCSV();
+                end;
+            }
+            action("Export Permissio Set")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                begin
+                    Xmlport.Run(50101, false, false);
                 end;
             }
         }
