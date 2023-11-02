@@ -98,9 +98,10 @@ page 50107 "Test Page"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "Work With Variable";
+                    WorkWith: Codeunit "My Codeunit Managament";
                 begin
-                    WorkWith.ReadObjectType();
+                    WorkWith.ProcedureWithOptionalParam('My Text 0', 0, true); // Message = "Sales Header"
+                    WorkWith.ProcedureWithOptionalParam('My Text 1', 1, true); // Message = "Purchase Header"
                 end;
             }
         }
