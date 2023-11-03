@@ -198,4 +198,19 @@ codeunit 50138 "Work With Record"
             SalesHeader."My Field Test" := 'Step 999';
     end;
 
+    // Procedura mająca na celu rozkręcenie pętli i na ostatnim rekordzie wykonanie jakiejś extra czynność np. dodanie 0,01PLN w rozkładaniu kosztu poprzez wskaźnik
+    procedure WhileRecord()
+    var
+        SalesHeader: Record "Sales Header";
+        Cnt: Integer;
+    begin
+        SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
+        if SalesHeader.FindSet() then
+            repeat
+                Cnt += 1;
+                if SalesHeader.Count = Cnt then
+                    Message('This is the last record %1', SalesHeader."No.");
+            until SalesHeader.Next() < 1;
+    end;
+
 }
