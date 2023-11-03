@@ -1,4 +1,4 @@
-xmlport 50101 ExportPermissionSet
+xmlport 50101 ExportPermissionSetToXML
 {
     Format = xml;
 

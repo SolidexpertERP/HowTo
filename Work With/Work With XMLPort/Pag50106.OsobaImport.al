@@ -66,6 +66,18 @@ page 50106 "Osoba Import"
                     Xmlport.Run(50101, false, false);
                 end;
             }
+            action("Export Sales Header to CSV")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                begin
+                    Xmlport.Run(50102, false, false);
+                end;
+            }
         }
     }
 }

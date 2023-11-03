@@ -84,9 +84,9 @@ page 50107 "Test Page"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "Work With Number";
+                    WorkWith: Codeunit "Work With Record";
                 begin
-                    WorkWith.ReverseSign();
+                    WorkWith.WhileRecord();
                 end;
             }
 
