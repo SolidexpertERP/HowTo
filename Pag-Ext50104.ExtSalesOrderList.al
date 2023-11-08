@@ -1,5 +1,22 @@
 pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
 {
+    layout
+    {
+        addlast(Control1)
+        {
+            field("Order No."; Rec."No.")
+            {
+                ApplicationArea = All;
+
+                trigger OnDrillDown()
+                begin
+                    Rec.FilterGroup(0);
+                    Rec.SetRange("Posting Date", Today);
+                    Page.Run(Page::"Sales Order", Rec);
+                end;
+            }
+        }
+    }
     actions
     {
         addafter("&Order Confirmation")
