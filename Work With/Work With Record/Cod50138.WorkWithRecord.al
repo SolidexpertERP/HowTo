@@ -121,6 +121,22 @@ codeunit 50138 "Work With Record"
             until SalesHeader.Next() < 1;
     end;
 
+    /// <summary>
+    /// Próba ustawienia filtra który przyrównuje jakieś pole do sumy dwóch pól - nie możliwe - trzeba zrobić flowfielda
+    /// </summary>
+    /// <param name="SalesHeader"></param>
+    internal procedure SetMyFilter(SalesHeader: Record "Sales Header")
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetRange("Document Type", SalesHeader."Document Type");
+        SalesLine.SetFilter("My Quantity 1", '<>0');
+        // Nie da się zastosować takiego filtra, trzeba zrobić sobie flowfield obliczający sumę i założyć na nim prosty filtr
+        SalesLine.SetFilter(Quantity, '<>%1', SalesLine."My Quantity 2" + SalesLine."Qty. to Invoice");
+        Message('%1', SalesLine.Count);
+    end;
+
     procedure WorkWithTestField()
     var
         SalesHeader: Record "Sales Header";
@@ -213,4 +229,10 @@ codeunit 50138 "Work With Record"
             until SalesHeader.Next() < 1;
     end;
 
+    [EventSubscriber(ObjectType::Page, Page::"Sales Order", 'OnOpenPageEvent', '', true, true)]
+    local procedure SalesOrder_OnOpenPageEvent(var Rec: Record "Sales Header")
+    begin
+        //Rec.FilterGroup(2);
+        //Rec.SetRange("Document Date", Today);
+    end;
 }
