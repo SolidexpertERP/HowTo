@@ -86,7 +86,7 @@ page 50107 "Test Page"
                 var
                     WorkWith: Codeunit JSON;
                 begin
-                    WorkWith.CreateSimpleJSON();
+                    WorkWith.CreateJSON2();
                 end;
             }
 
