@@ -84,4 +84,41 @@ codeunit 50147 JSON
         //obj.WriteTo(txt);
         //Message(txt);
     end;
+
+    procedure CreateJSON3()
+    var
+        Json: JsonObject;
+        JsonTxt: Text;
+        Token1: JsonToken;
+        ListOfText: List of [Text];
+    begin
+        Json.Add('name', 'Json Test');
+        Json.Add('version', '1.0.0.0');
+        Json.Add('array', CreateJsonArray());
+
+        ListOfText := Json.Keys();
+        foreach JsonTxt in ListOfText do begin
+            Message(JsonTxt);
+        end;
+
+        Json.Replace('name', 'xxx'); //zastępuje name ale przesuwa go na koniec JSON'a
+
+        Json.WriteTo(JsonTxt);
+        Message(JsonTxt);
+    end;
+
+    local procedure CreateJsonArray() JSArray: JsonArray
+    var
+        JSObj: JsonObject;
+        i: Integer;
+    begin
+        for i := 1 to 10 do begin
+            Clear(JSObj);
+            JSObj.Add('nr', i);
+            JSObj.Add('nazwa', 'jakaś nazwa');
+            JSArray.Add(JSObj);
+        end;
+        Message(JSObj.Path()); // wskazuje jak głęboko zagbieżdżony jest element -> JSObj.Path() = [9]
+        Message(JSArray.Path()); // JSObj.Path() = pusty ciąg znaków bo to ROOT
+    end;
 }
