@@ -150,4 +150,23 @@ codeunit 50135 "Work With RecRef FieldRef"
 
         Message('RecRef.Name: %1 (%2)', RecRef.Name, FromTxt);
     end;
+
+
+    /// <summary>
+    /// Funkcja do otwarcia dowolnego rekordu po jego ID i rozkręcenie pętli
+    /// </summary>
+    /// <param name="DatabaseID"></param>
+    procedure OpenRecAndWhile(DatabaseID: Integer)
+    var
+        DataTypeMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        FldRef: FieldRef;
+    begin
+        RecRef.Open(DatabaseID);
+        if RecRef.FindSet() then
+            repeat
+                if DataTypeMgt.FindFieldByName(RecRef, FldRef, 'No.') then
+                    Message(Format(FldRef.Value));
+            until RecRef.Next() < 1;
+    end;
 }

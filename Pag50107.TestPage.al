@@ -98,10 +98,9 @@ page 50107 "Test Page"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "My Codeunit Managament";
+                    WorkWith: Codeunit "Work With RecRef FieldRef";
                 begin
-                    WorkWith.ProcedureWithOptionalParam('My Text 0', 0, true); // Message = "Sales Header"
-                    WorkWith.ProcedureWithOptionalParam('My Text 1', 1, true); // Message = "Purchase Header"
+                    WorkWith.OpenRecAndWhile(Database::Customer);
                 end;
             }
         }
