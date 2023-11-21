@@ -24,9 +24,34 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "Work With Record";
+                    WorkWith: Codeunit "Work With RecRef FieldRef";
+                    SalesLine: Record "Sales Line";
                 begin
-                    WorkWith.SetMyFilter(Rec);
+                    SalesLine.SetRange("Document No.", Rec."No.");
+                    WorkWith.SendSetToVariable(SalesLine);
+                end;
+            }
+            action("Duplicate First Sales Line")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    SalesLine: Record "Sales Line";
+                    NewSalesLine: Record "Sales Line";
+                begin
+                    if SalesLine.Get(Rec."Document Type", Rec."No.", 10000) then begin
+                        NewSalesLine.Init();
+                        NewSalesLine."Document Type" := Rec."Document Type";
+                        NewSalesLine."Document No." := Rec."No.";
+                        NewSalesLine.InitNewLine(NewSalesLine);
+                        NewSalesLine."Line No." += 10000;
+                        NewSalesLine.Insert(true);
+                        NewSalesLine.Validate("My Quantity 1", 100);
+                        NewSalesLine.Modify(true);
+                    end;
                 end;
             }
         }

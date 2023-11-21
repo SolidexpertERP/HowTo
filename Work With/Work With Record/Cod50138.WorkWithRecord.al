@@ -133,7 +133,19 @@ codeunit 50138 "Work With Record"
         SalesLine.SetRange("Document Type", SalesHeader."Document Type");
         SalesLine.SetFilter("My Quantity 1", '<>0');
         // Nie da się zastosować takiego filtra, trzeba zrobić sobie flowfield obliczający sumę i założyć na nim prosty filtr
-        SalesLine.SetFilter(Quantity, '<>%1', SalesLine."My Quantity 2" + SalesLine."Qty. to Invoice");
+        SalesLine.SetFilter(Quantity, '<>%1', SalesLine."My Quantity 1" + SalesLine."My Quantity 2");
+        Message('%1', SalesLine.Count);
+
+        SalesLine.Reset();
+        // trzeba to zrobić troszkę inaczej 
+        SalesLine.SetRange("Document No.", SalesHeader."No.");
+        SalesLine.SetRange("Document Type", SalesHeader."Document Type");
+        if SalesLine.FindSet() then
+            repeat
+                if SalesLine.Quantity <> SalesLine."My Quantity 1" + SalesLine."My Quantity 2" then
+                    SalesLine.Mark(true);
+            until SalesLine.Next() < 1;
+        SalesLine.MarkedOnly(true);
         Message('%1', SalesLine.Count);
     end;
 
@@ -234,5 +246,20 @@ codeunit 50138 "Work With Record"
     begin
         //Rec.FilterGroup(2);
         //Rec.SetRange("Document Date", Today);
+    end;
+
+    /// <summary>
+    /// Funkcja mająca na celu odebranie dowolnego rekordu, zdekodowanie jakichś informacji, ich nadpisanie i powrót. Przyjmowany rekord jest w trakcie tworzenia
+    /// </summary>
+    procedure CalculateSetAndProcesedRecToVariant(var FromRecVariant: Variant)
+    var
+        DataMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        FldRef: FieldRef;
+    begin
+        DataMgt.GetRecordRef(FromRecVariant, RecRef);
+        DataMgt.FindFieldByName(RecRef, FldRef, 'My Quantity 2');
+        FldRef.Value := 155;
+        FromRecVariant := RecRef;
     end;
 }

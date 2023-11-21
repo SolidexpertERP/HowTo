@@ -98,9 +98,9 @@ page 50107 "Test Page"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "Work With RecRef FieldRef";
+                    WorkWith: Codeunit "Work With Record";
                 begin
-                    WorkWith.OpenRecAndWhile(Database::Customer);
+
                 end;
             }
         }

@@ -169,4 +169,45 @@ codeunit 50135 "Work With RecRef FieldRef"
                     Message(Format(FldRef.Value));
             until RecRef.Next() < 1;
     end;
+
+    /// <summary>
+    /// Co się stanie jeżeli w tabeli nie będzie pola o podanej nazwie
+    /// </summary>
+    /// <param name="RecVariant"></param>
+    procedure TestGetFakeField(RecVariant: Variant)
+    var
+        DataMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        FldRef: FieldRef;
+        NoVal: Code[20];
+    begin
+        DataMgt.GetRecordRef(RecVariant, RecRef);
+
+        if DataMgt.FindFieldByName(RecRef, FldRef, 'Dupsko Zbite') then
+            NoVal := FldRef.Value;
+        Message('FldRef Dupsko Blade: %1', NoVal); // tutaj po prostu nie pobierze zmiennej
+
+        DataMgt.FindFieldByName(RecRef, FldRef, 'Dupsko Zbite');
+        NoVal := FldRef.Value; // Wywali błąd że zmienna nie została zainicjowana
+        Message('FldRef Dupsko Blade: %1', NoVal);
+    end;
+
+    /// <summary>
+    /// Sparawdzenie co się stanie jak do Variant prześlę jakiegoś Seta np. Sales Line przefiltrowane po numerze dokumentu
+    /// </summary>
+    /// <param name="RecVariant"></param>
+    procedure SendSetToVariable(RecVariant: Variant)
+    var
+        DataMgt: Codeunit "Data Type Management";
+        RecRef: RecordRef;
+        FldRef: FieldRef;
+    begin
+        DataMgt.GetRecordRef(RecVariant, RecRef); // Tutaj pobierze sobie recref z filtrami jeżeli będą
+        Message(RecRef.GetFilters); // Tutaj będzie informacja o nałożonym filtrze "Nr Dokumentu": XYZ..
+        if RecRef.FindSet() then // Jeżeli pod RecVariant będzie się kryż przefiltrowany data set to można od razu rozkręcać pętle 
+            repeat
+                DataMgt.FindFieldByName(RecRef, FldRef, 'No.'); //Wyświetli numer 
+                Message(FldRef.Value());
+            until RecRef.Next() < 1;
+    end;
 }
