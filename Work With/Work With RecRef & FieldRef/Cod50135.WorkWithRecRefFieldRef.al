@@ -210,4 +210,120 @@ codeunit 50135 "Work With RecRef FieldRef"
                 Message(FldRef.Value());
             until RecRef.Next() < 1;
     end;
+
+    /// <summary>
+    /// Kopiowanie filtrów pomiędzy dwiema różnymi tabelami na podstawie znalezionych pól o takiej samej nazwie i typie z wykorzystaniem Variant
+    /// </summary>
+    /// <param name="FromRec"></param>
+    /// <param name="ToRec"></param>
+    internal procedure CopyFilters(var FromRec: Record "Sales Header"; var ToRec: Record Job)
+    var
+        FromRecVariant: Variant;
+        ToRecVariant: Variant;
+        FromRecFilterGroup: Integer;
+        ToRecFilterGroup: Integer;
+    begin
+        FromRecVariant := FromRec; // Kopiowanie rekordu do Variant
+        ToRecVariant := ToRec;
+        FromRecFilterGroup := 0;
+        ToRecFilterGroup := 2;
+        CopyFiltersTransfer(FromRecVariant, FromRecFilterGroup, ToRecVariant, ToRecFilterGroup);
+        ToRec.CopyFilters(ToRecVariant); // zaaplikowanie filtrów do docelowego rekordu z Variant
+    end;
+
+    /// <summary>
+    /// Transferowanie filtrów pomiędzy dwoma tabelami z wykorzystaniem Variant
+    /// </summary>
+    /// <param name="FromRecord"></param>
+    /// <param name="FromFilterGroup"></param>
+    /// <param name="ToRecord"></param>
+    /// <param name="ToFilterGroup"></param>
+    internal procedure CopyFiltersTransfer(var FromRecord: Variant; FromFilterGroup: Integer; var ToRecord: Variant; ToFilterGroup: Integer)
+    var
+        DataTypMgt: Codeunit "Data Type Management";
+        FromRecRef: RecordRef;
+        ToRecRef: RecordRef;
+        FromFldRef: FieldRef;
+        ToFldRef: FieldRef;
+        FromField: Record "Field";
+        ToField: Record "Field";
+        FromFieldFilterTxt: Text;
+    begin
+        if not DataTypMgt.GetRecordRef(FromRecord, FromRecRef) then
+            exit;
+        if not DataTypMgt.GetRecordRef(ToRecord, ToRecRef) then
+            exit;
+
+        FromRecRef.FilterGroup(FromFilterGroup);
+        ToRecRef.FilterGroup(ToFilterGroup);
+
+        FromField.SetRange(TableNo, FromRecRef.Number);
+        if FromField.FindSet() then
+            repeat
+                FromFldRef := FromRecRef.Field(FromField."No.");
+                FromFieldFilterTxt := FromFldRef.GetFilter();
+                if FromFieldFilterTxt <> '' then begin
+                    ToField.SetRange(TableNo, ToRecRef.Number);
+                    ToField.SetRange(FieldName, FromField.FieldName);
+                    ToField.SetRange(Type, FromField.Type);
+                    if ToField.FindFirst() then begin
+                        ToFldRef := ToRecRef.Field(ToField."No.");
+                        ToFldRef.SetFilter(FromFieldFilterTxt);
+                    end;
+                end;
+            until FromField.Next() < 1;
+
+        ToRecord := ToRecRef; // Przenoszenie do Variantu naniesionych zmian 
+    end;
+
+    /// <summary>
+    /// Kopiowanie filtrów pomiędzy dwiema różnymi tabelami na podstawie znalezionych pól o takiej samej nazwie i typie z wykorzystaniem RecordRef
+    /// </summary>
+    /// <param name="FromRec"></param>
+    /// <param name="ToRec"></param>
+    procedure CopyFilters2(var FromRec: Record "Sales Header"; var ToRec: Record Job)
+    var
+        FromRecRef: RecordRef;
+        ToRecRef: RecordRef;
+    begin
+        FromRecRef.GetTable(FromRec); // Pobranie tabeli do RecRef
+        ToRecRef.GetTable(ToRec);
+        CopyFiltersTransfer2(FromRecRef, 0, ToRecRef, 2); // Transfer pól
+        ToRecRef.SetTable(ToRec); // Zaaplikowanie na Record ToRec filtrów z ToRecRef
+    end;
+
+    /// <summary>
+    /// Transfer filtrów pomiędzy polami
+    /// </summary>
+    /// <param name="FromRecRef"></param>
+    /// <param name="FromFilterGroup"></param>
+    /// <param name="ToRecRef"></param>
+    /// <param name="ToFilterGroup"></param>
+    procedure CopyFiltersTransfer2(var FromRecRef: RecordRef; FromFilterGroup: Integer; var ToRecRef: RecordRef; ToFilterGroup: Integer)
+    var
+        FromFldRef: FieldRef;
+        ToFldRef: FieldRef;
+        FromField: Record "Field";
+        ToField: Record "Field";
+        FromFieldFilterTxt: Text;
+    begin
+        FromRecRef.FilterGroup(FromFilterGroup);
+        ToRecRef.FilterGroup(ToFilterGroup);
+
+        FromField.SetRange(TableNo, FromRecRef.Number);
+        if FromField.FindSet() then
+            repeat
+                FromFldRef := FromRecRef.Field(FromField."No.");
+                FromFieldFilterTxt := FromFldRef.GetFilter();
+                if FromFieldFilterTxt <> '' then begin
+                    ToField.SetRange(TableNo, ToRecRef.Number);
+                    ToField.SetRange(FieldName, FromField.FieldName);
+                    ToField.SetRange(Type, FromField.Type);
+                    if ToField.FindFirst() then begin
+                        ToFldRef := ToRecRef.Field(ToField."No.");
+                        ToFldRef.SetFilter(FromFieldFilterTxt);
+                    end;
+                end;
+            until FromField.Next() < 1;
+    end;
 }
