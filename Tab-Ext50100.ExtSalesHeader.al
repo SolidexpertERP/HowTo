@@ -29,6 +29,20 @@ tableextension 50100 "Ext Sales Header" extends "Sales Header"
             Editable = false;
             CalcFormula = sum("Sales Line".Amount where("Document Type" = const(Order)));
         }
+        field(50104; "My New Document Date"; Date)
+        {
+            Caption = 'My New Document Date';
+
+            trigger OnValidate()
+            var
+                WorkWith: Codeunit "Work With RecRef FieldRef";
+                RecVariant: Variant;
+            begin
+                RecVariant := Rec;
+                WorkWith.CheckAndUpdateDocumentDate2(RecVariant, Rec.FieldNo("Document Date"), Rec."My New Document Date");
+                Rec := RecVariant;
+            end;
+        }
     }
 
     trigger OnModify()

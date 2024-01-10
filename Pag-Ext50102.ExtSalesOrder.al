@@ -9,6 +9,10 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
             {
                 ApplicationArea = All;
             }
+            field("My New Document Date"; Rec."My New Document Date")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 
@@ -16,6 +20,19 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
     {
         addfirst(processing)
         {
+            action("Multiple Func")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWith: Codeunit "Work With RecRef FieldRef";
+                begin
+                    WorkWith.CheckAndUpdateDocumentDate(Rec.RecordId, Rec."My New Document Date");
+                end;
+            }
             action("My Func")
             {
                 Promoted = true;

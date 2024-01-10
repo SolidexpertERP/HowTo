@@ -1,5 +1,59 @@
 codeunit 50135 "Work With RecRef FieldRef"
 {
+    var
+        RecRef: RecordRef;
+
+    procedure SetFilterMSExample()
+    var
+        MyRecordRef: RecordRef;
+        FldRef: FieldRef;
+        varFilters: Text;
+        Text000: Label 'The filter is set on the %1 field.';
+    begin
+        MyRecordRef.Open(Database::Customer);
+        FldRef := MyRecordRef.Field(1);
+        FldRef.SetRange('40000');
+        if MyRecordRef.FindSet() then
+            repeat
+                Message('Jest!');
+            until MyRecordRef.Next() < 1;
+        varFilters := MyRecordRef.GetFilters;
+        Message(Text000, varFilters);
+    end;
+
+    procedure SetFilterMSExample2()
+    var
+        Customer: Record Customer;
+        MyRecordRef: RecordRef;
+        FldRef: FieldRef;
+        varFilters: Text;
+        Text000: Label 'The filter is set on the %1 field.';
+    begin
+        MyRecordRef.Open(Database::Customer);
+        MyRecordRef.SetRecFilter();
+        varFilters := MyRecordRef.GetFilters;
+        Message(Text000, varFilters);
+    end;
+
+    procedure SetFilterMSExample3()
+    begin
+        RecRef.Open(Database::Customer);
+        SetupFilterRecRef(); // Jeżeli ustawimy do globalnego RecRef Filtry w odrębnej procedurze to on sobie je ładnie zastosuje
+        if RecRef.FindSet() then
+            repeat
+                Message('Wejszło i znalazło');
+            until RecRef.Next() < 1;
+    end;
+
+    local procedure SetupFilterRecRef()
+    var
+        DataTypeMgt: Codeunit "Data Type Management";
+        NoFldRef: FieldRef;
+    begin
+        DataTypeMgt.FindFieldByName(RecRef, NoFldRef, 'No.');
+        NoFldRef.SetRange('40000ABCD');
+    end;
+
     procedure UpdateCity(RecordToUpdate: Variant; NewCityName: Code[20]; FieldNo: Integer)
     var
         DataTypeMgt: Codeunit "Data Type Management";
@@ -209,5 +263,186 @@ codeunit 50135 "Work With RecRef FieldRef"
                 DataMgt.FindFieldByName(RecRef, FldRef, 'No.'); //Wyświetli numer 
                 Message(FldRef.Value());
             until RecRef.Next() < 1;
+    end;
+
+    /// <summary>
+    /// Kopiowanie filtrów pomiędzy dwiema różnymi tabelami na podstawie znalezionych pól o takiej samej nazwie i typie z wykorzystaniem Variant
+    /// </summary>
+    /// <param name="FromRec"></param>
+    /// <param name="ToRec"></param>
+    internal procedure CopyFilters(var FromRec: Record "Sales Header"; var ToRec: Record Job)
+    var
+        FromRecVariant: Variant;
+        ToRecVariant: Variant;
+        FromRecFilterGroup: Integer;
+        ToRecFilterGroup: Integer;
+    begin
+        FromRecVariant := FromRec; // Kopiowanie rekordu do Variant
+        ToRecVariant := ToRec;
+        FromRecFilterGroup := 0;
+        ToRecFilterGroup := 2;
+        CopyFiltersTransfer(FromRecVariant, FromRecFilterGroup, ToRecVariant, ToRecFilterGroup);
+        ToRec.CopyFilters(ToRecVariant); // zaaplikowanie filtrów do docelowego rekordu z Variant
+    end;
+
+    /// <summary>
+    /// Transferowanie filtrów pomiędzy dwoma tabelami z wykorzystaniem Variant
+    /// </summary>
+    /// <param name="FromRecord"></param>
+    /// <param name="FromFilterGroup"></param>
+    /// <param name="ToRecord"></param>
+    /// <param name="ToFilterGroup"></param>
+    internal procedure CopyFiltersTransfer(var FromRecord: Variant; FromFilterGroup: Integer; var ToRecord: Variant; ToFilterGroup: Integer)
+    var
+        DataTypMgt: Codeunit "Data Type Management";
+        FromRecRef: RecordRef;
+        ToRecRef: RecordRef;
+        FromFldRef: FieldRef;
+        ToFldRef: FieldRef;
+        FromField: Record "Field";
+        ToField: Record "Field";
+        FromFieldFilterTxt: Text;
+    begin
+        if not DataTypMgt.GetRecordRef(FromRecord, FromRecRef) then
+            exit;
+        if not DataTypMgt.GetRecordRef(ToRecord, ToRecRef) then
+            exit;
+
+        FromRecRef.FilterGroup(FromFilterGroup);
+        ToRecRef.FilterGroup(ToFilterGroup);
+
+        FromField.SetRange(TableNo, FromRecRef.Number);
+        if FromField.FindSet() then
+            repeat
+                FromFldRef := FromRecRef.Field(FromField."No.");
+                FromFieldFilterTxt := FromFldRef.GetFilter();
+                if FromFieldFilterTxt <> '' then begin
+                    ToField.SetRange(TableNo, ToRecRef.Number);
+                    ToField.SetRange(FieldName, FromField.FieldName);
+                    ToField.SetRange(Type, FromField.Type);
+                    if ToField.FindFirst() then begin
+                        ToFldRef := ToRecRef.Field(ToField."No.");
+                        ToFldRef.SetFilter(FromFieldFilterTxt);
+                    end;
+                end;
+            until FromField.Next() < 1;
+
+        ToRecord := ToRecRef; // Przenoszenie do Variantu naniesionych zmian 
+    end;
+
+    /// <summary>
+    /// Kopiowanie filtrów pomiędzy dwiema różnymi tabelami na podstawie znalezionych pól o takiej samej nazwie i typie z wykorzystaniem RecordRef
+    /// </summary>
+    /// <param name="FromRec"></param>
+    /// <param name="ToRec"></param>
+    procedure CopyFilters2(var FromRec: Record "Sales Header"; var ToRec: Record Job)
+    var
+        FromRecRef: RecordRef;
+        ToRecRef: RecordRef;
+    begin
+        FromRecRef.GetTable(FromRec); // Pobranie tabeli do RecRef
+        ToRecRef.GetTable(ToRec);
+        CopyFiltersTransfer2(FromRecRef, 0, ToRecRef, 2); // Transfer pól
+        ToRecRef.SetTable(ToRec); // Zaaplikowanie na Record ToRec filtrów z ToRecRef
+    end;
+
+    /// <summary>
+    /// Transfer filtrów pomiędzy polami
+    /// </summary>
+    /// <param name="FromRecRef"></param>
+    /// <param name="FromFilterGroup"></param>
+    /// <param name="ToRecRef"></param>
+    /// <param name="ToFilterGroup"></param>
+    procedure CopyFiltersTransfer2(var FromRecRef: RecordRef; FromFilterGroup: Integer; var ToRecRef: RecordRef; ToFilterGroup: Integer)
+    var
+        FromFldRef: FieldRef;
+        ToFldRef: FieldRef;
+        FromField: Record "Field";
+        ToField: Record "Field";
+        FromFieldFilterTxt: Text;
+    begin
+        FromRecRef.FilterGroup(FromFilterGroup);
+        ToRecRef.FilterGroup(ToFilterGroup);
+
+        FromField.SetRange(TableNo, FromRecRef.Number);
+        if FromField.FindSet() then
+            repeat
+                FromFldRef := FromRecRef.Field(FromField."No.");
+                FromFieldFilterTxt := FromFldRef.GetFilter();
+                if FromFieldFilterTxt <> '' then begin
+                    ToField.SetRange(TableNo, ToRecRef.Number);
+                    ToField.SetRange(FieldName, FromField.FieldName);
+                    ToField.SetRange(Type, FromField.Type);
+                    if ToField.FindFirst() then begin
+                        ToFldRef := ToRecRef.Field(ToField."No.");
+                        ToFldRef.SetFilter(FromFieldFilterTxt);
+                    end;
+                end;
+            until FromField.Next() < 1;
+    end;
+
+    /// <summary>
+    /// Sposób 1 na wielofunkcyjną procedurę która coś robi dla różnych dokumentów w tym przypadku prosta zmiana daty dokumentu. Sposób możliwy do wykorzystania kiedy nie pracujemy na Rec, czyli nie można go zastosować na Validacji pola w tabeli.
+    /// </summary>
+    /// <param name="DocumentRecordId"></param>
+    /// <param name="DocumentDate"></param>
+    procedure CheckAndUpdateDocumentDate(DocumentRecordId: RecordId; DocumentDate: Date)
+    var
+        DocumentRecRef: RecordRef;
+    begin
+        SetupRecordRef(DocumentRecRef, DocumentRecordID);
+        UpdateDocumentDate(DocumentRecRef, DocumentDate);
+        UpdateDocument(DocumentRecRef);
+    end;
+
+    local procedure SetupRecordRef(var RecRef: RecordRef; RecID: RecordID)
+    begin
+        RecRef.Get(RecID);
+    end;
+
+    local procedure UpdateDocumentDate(DocumentRecRef: RecordRef; DocumentDate: Date)
+    var
+        DocumentDateFieldRef: FieldRef;
+    begin
+        DocumentDateFieldRef := DocumentRecRef.Field(GetDocumentDateFieldNo(DocumentRecRef));
+        DocumentDateFieldRef.Value := DocumentDate;
+    end;
+
+    /// <summary>
+    /// Rozbudowa tej funkcji, powoduje rozbudowę całego mechanizmu o nowe obiekty
+    /// </summary>
+    /// <param name="DocumentRecRef"></param>
+    /// <returns></returns>
+    local procedure GetDocumentDateFieldNo(DocumentRecRef: RecordRef): Integer
+    var
+        SalesHeader: Record "Sales Header";
+        PurchaseHeader: Record "Purchase Header";
+    begin
+        case DocumentRecRef.Number of
+            Database::"Sales Header":
+                exit(SalesHeader.FieldNo("Document Date"));
+            Database::"Purchase Header":
+                exit(PurchaseHeader.FieldNo("Document Date"));
+        end;
+    end;
+
+    local procedure UpdateDocument(DocumentRecRef: RecordRef)
+    begin
+        DocumentRecRef.Modify(true);
+    end;
+
+    /// <summary>
+    /// Sposób 2 na multi funkcję, która działa na validacji pola tabeli
+    /// </summary>
+    /// <param name="RecVariant"></param>
+    procedure CheckAndUpdateDocumentDate2(var RecVariant: Variant; FieldNo: Integer; DocumentDate: Date)
+    var
+        DataMgt: Codeunit "Data Type Management";
+        DocumentRecRef: RecordRef;
+        DocumentDateFldRef: FieldRef;
+    begin
+        DataMgt.GetRecordRefAndFieldRef(RecVariant, FieldNo, DocumentRecRef, DocumentDateFldRef);
+        DocumentDateFldRef.Value := DocumentDate;
+        RecVariant := DocumentRecRef;
     end;
 }

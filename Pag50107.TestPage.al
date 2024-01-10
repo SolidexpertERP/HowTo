@@ -98,9 +98,9 @@ page 50107 "Test Page"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "Work With Record";
+                    WorkWith: Codeunit "Work With RecRef FieldRef";
                 begin
-
+                    WorkWith.SetFilterMSExample3();
                 end;
             }
         }
