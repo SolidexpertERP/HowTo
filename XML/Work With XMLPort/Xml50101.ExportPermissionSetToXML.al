@@ -1,6 +1,7 @@
 xmlport 50101 ExportPermissionSetToXML
 {
     Format = xml;
+    Namespaces = bc = 'asd';
 
     schema
     {
@@ -15,6 +16,7 @@ xmlport 50101 ExportPermissionSetToXML
                 tableelement(P; "Tenant Permission")
                 {
                     XmlName = 'Permission';
+                    NamespacePrefix = 'xyz';
                     LinkTable = pset;
                     LinkFields = "Role ID" = FIELD("Role ID");
 
