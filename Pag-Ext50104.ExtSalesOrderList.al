@@ -186,6 +186,32 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
                     WorkWithRecord.FindDocument();
                 end;
             }
+            action(CreateXML)
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWithXML: Codeunit "Work With XML";
+                begin
+                    WorkWithXML.CreateSampleXML(Rec);
+                end;
+            }
+            action("Import Currancy Rate From MBank")
+            {
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    WorkWithXML: Codeunit "Work With XML";
+                begin
+                    WorkWithXML.ImportCurrencyRate();
+                end;
+            }
         }
     }
 
