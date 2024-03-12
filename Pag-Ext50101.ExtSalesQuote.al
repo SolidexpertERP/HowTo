@@ -155,7 +155,7 @@ pageextension 50101 "Ext Sales Quote" extends "Sales Quote"
 
                 trigger OnAction()
                 var
-                    TxtCU: Codeunit "Work With Split Text";
+                    TxtCU: Codeunit "Work With Text";
                 begin
                     TxtCU.SplitText();
                 end;

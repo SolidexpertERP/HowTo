@@ -71,6 +71,41 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                     end;
                 end;
             }
+            action(CalcSumLine)
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    SalesLine: Record "Sales Line";
+                begin
+                    SalesLine.SetRange("Document No.", Rec."No.");
+                    SalesLine.CalcSums(Quantity);
+                    if SalesLine.FindSet() then begin
+                        Message('Before: ' + Format(SalesLine.Quantity)); // Tutaj widzi to jako zsumowaną wartość
+                        repeat
+                            Message(Format(SalesLine.Quantity)); // po pobraniu rekordu, widzi już jako ilość poszczególnego wiersza 
+                        until SalesLine.Next() < 1;
+                        Message('After: ' + Format(SalesLine.Quantity)); // tutaj widzi ilość wiersza z ostatniej iteracji pętli
+                    end;
+                end;
+            }
+            action(SENDSMS)
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Calls;
+
+                trigger OnAction()
+                var
+                    WorkWithAPI: Codeunit "Work With API";
+                begin
+                    WorkWithAPI.APISMS();
+                end;
+            }
         }
     }
 

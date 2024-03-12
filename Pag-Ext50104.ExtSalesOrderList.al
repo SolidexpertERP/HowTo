@@ -108,7 +108,7 @@ pageextension 50104 "Ext Sales Order List" extends "Sales Order List"
 
                 trigger OnAction()
                 var
-                    WorkWith: Codeunit "Work With Split Text";
+                    WorkWith: Codeunit "Work With Text";
                 begin
                     WorkWith.PadString();
                 end;

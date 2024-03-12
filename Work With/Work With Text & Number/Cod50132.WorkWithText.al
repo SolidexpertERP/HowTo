@@ -1,4 +1,4 @@
-codeunit 50132 "Work With Split Text"
+codeunit 50132 "Work With Text"
 {
     procedure SplitText()
     var
