@@ -92,7 +92,7 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                     end;
                 end;
             }
-            action(SENDSMS)
+            action("SEND SMS Method 1")
             {
                 Promoted = true;
                 PromotedIsBig = true;
@@ -104,6 +104,68 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                     WorkWithAPI: Codeunit "Work With API";
                 begin
                     WorkWithAPI.APISMS();
+                end;
+            }
+            action("SEND SMS Method 2")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Calls;
+
+                trigger OnAction()
+                var
+                    WorkWithAPI: Codeunit "Work With API";
+                begin
+                    WorkWithAPI.APISMS2();
+                end;
+            }
+            action("Some API")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Web;
+
+                trigger OnAction()
+                var
+                    WorkWithAPI: Codeunit "Work With API";
+                begin
+                    WorkWithAPI.SomeApi();
+                end;
+            }
+            action("Weather API")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Web;
+
+                trigger OnAction()
+                var
+                    WorkWithAPI: Codeunit "Work With API";
+                begin
+                    WorkWithAPI.WeatherAPI();
+                end;
+            }
+            action("TEST")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Web;
+
+                trigger OnAction()
+                var
+                    Time: Text;
+                    MyTime: Time;
+                    MyDateTime: DateTime;
+                    HourInMs: Decimal;
+                begin
+                    HourInMs := 5 * 60 * 60 * 1000;
+                    MyTime := System.Time - HourInMs;
+                    Time := Format(MyTime, 0, '<Hours24,2><Filler Character,0><Minutes,2><Seconds,2>');
+                    Message(Time);
                 end;
             }
         }
