@@ -148,7 +148,7 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                     WorkWithAPI.WeatherAPI();
                 end;
             }
-            action("TEST")
+            action("OAuth 2.0")
             {
                 Promoted = true;
                 PromotedIsBig = true;
@@ -157,15 +157,9 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
 
                 trigger OnAction()
                 var
-                    Time: Text;
-                    MyTime: Time;
-                    MyDateTime: DateTime;
-                    HourInMs: Decimal;
+                    OAuth: Codeunit "OAuth 2.0";
                 begin
-                    HourInMs := 5 * 60 * 60 * 1000;
-                    MyTime := System.Time - HourInMs;
-                    Time := Format(MyTime, 0, '<Hours24,2><Filler Character,0><Minutes,2><Seconds,2>');
-                    Message(Time);
+                    OAuth.OAuth();
                 end;
             }
         }
