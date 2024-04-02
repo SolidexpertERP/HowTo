@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="pl-PL" original="ApkaTest">
+    <body>
+      <group id="body">
+        <trans-unit id="Table 3411982962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BE MultiBank Currency Rates</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 329134311 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Entry No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 2400859765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field001</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field001 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 1763163148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field002</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field002 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 1125466531 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field003</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field003 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 487769914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field004</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field004 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 4145040593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field005</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field005 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 3507343976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field006</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field006 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 2869647359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field007</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field007 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3411982962 - Field 3845162022 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field008</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table BE MultiBank Currency Rates - Field Field008 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4126130292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Configuration</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Configuration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4126130292 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You cannot use system table %1 in the package.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Configuration - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Table 4126130292 - Field 3135334477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table ID</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Configuration - Field Table ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4126130292 - Field 3808951907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table Name</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Configuration - Field Table Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4126130292 - Field 3819003263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Type Notification</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Configuration - Field Type Notification - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data To Create Document</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Field 3168444338 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Street</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Field Address - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Field 714791889 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>City</source>
+          <target state="translated">Miasto</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Field City - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Field 486908828 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Field Document No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Field 966287263 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Surname</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Field Name 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1344317292 - Field 2743501653 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Name</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Data To Create Document - Field Ship-to Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2624941231 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Osoba</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Import Osoba - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2624941231 - Field 709311815 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Urodzenia</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Import Osoba - Field Data Urodzenia - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2624941231 - Field 4128836460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Imię</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Import Osoba - Field Imie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2624941231 - Field 358160827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Miejsce Zamieszkania</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Import Osoba - Field Miejsce Zamieszkania - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2624941231 - Field 1118207864 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nazwisko</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Import Osoba - Field Nazwisko - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2624941231 - Field 186820484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Wiek</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Import Osoba - Field Wiek - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 201695559 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table RegEx Pattern - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 201695559 - Field 3405260471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RegEx</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table RegEx Pattern - Field RegEx - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4170052080 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table Update Page From Table</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table Update Page From Table - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4170052080 - Field 701853069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field A</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table Update Page From Table - Field Field A - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4170052080 - Field 64156452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field B</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table Update Page From Table - Field Field B - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4170052080 - Field 949215307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table Update Page From Table - Field No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2363517801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UV KPI Items</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table UV KPI Items - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2363517801 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table UV KPI Items - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2363517801 - Field 949215307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table UV KPI Items - Field No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2865167508 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work With CurrFieldNo Table</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Work With CurrFieldNo Table - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2865167508 - Field 3558390861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Age</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Work With CurrFieldNo Table - Field Age - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2865167508 - Field 2834327259 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Age 2</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Work With CurrFieldNo Table - Field Age2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2865167508 - Field 129688762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User Name</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Work With CurrFieldNo Table - Field User Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2865167508 - Field 1911820406 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User Surname</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Work With CurrFieldNo Table - Field User Surname - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1333701777 - Method 2055465521 - NamedType 3003898253" size-unit="char" translate="yes" xml:space="preserve">
+          <source>https://catfact.ninja/fact</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Http Managament - Method HttpRequestCatFact - NamedType URL</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2369991593 - NamedType 64372449" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Error document type.\Incoming Docuemtn type: %1\Expected docuemtn type: %2</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Sales Managament - NamedType ErrorDocumentType</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2369991593 - NamedType 3483116482" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Create Sales Invoice from %1 not implemented</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2">%1 - Table Caption or document type</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Sales Managament - NamedType ErrorSalesInvCreateNotImplemented</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2369991593 - NamedType 3271093850" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invoice Created %1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2">%1 - Invoice No.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Sales Managament - NamedType MessageInvoiceCreate</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2369991593 - Method 3730719364 - NamedType 3442202265" size-unit="char" translate="yes" xml:space="preserve">
+          <source>%1 not implemented. Chceck encoding incoming record to %1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Sales Managament - Method CreateSalesInvoiceFromTemporary - NamedType ErrorTableIsEmptyCheckEncodingIncomingRecord</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2369991593 - Method 1382227061 - NamedType 66091263" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Do you want open %1?</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Sales Managament - Method OpenSalesHeader - NamedType QuestionOpenDocument</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2369991593 - Method 1382227061 - NamedType 2585342563" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open Record %1 %2 not implemented</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Sales Managament - Method OpenSalesHeader - NamedType ErrorOpenRecord</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2050619786 - Method 3951165134 - NamedType 40722887" size-unit="char" translate="yes" xml:space="preserve">
+          <source>https://www.mbank.pl/ajax/currency/getCSV/?id=0</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Web Services - Method DownloadMBankCurrencyRate - NamedType FileUrl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 2067344476 - NamedType 3092532042" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;+CM&gt;</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate - NamedType ExprPreviousMonth</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 2067344476 - NamedType 481128698" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;-CM-11M&gt;</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate - NamedType ExprLast12Month</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 712421451 - NamedType 3092532042" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;+CM-12M&gt;</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate1 - NamedType ExprPreviousMonth</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 712421451 - NamedType 481128698" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&lt;-CM-11M&gt;</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate1 - NamedType ExprLast12Month</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 2625511302 - NamedType 1089654559" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The reference date is: %1 \\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate2 - NamedType RefDateTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 2625511302 - NamedType 3544504546" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The expression: %2 returns %3\\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate2 - NamedType Expr1Txt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 2625511302 - NamedType 2696701279" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The expression: %4 returns %5\\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate2 - NamedType Expr2Txt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2615575305 - Method 2625511302 - NamedType 928462304" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The expression: %6 returns %7</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Date - Method CalculateDate2 - NamedType Expr3Txt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2350717567 - Method 4098876048 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The filter is set on the %1 field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With RecRef FieldRef - Method SetFilterMSExample - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2350717567 - Method 1040949978 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The filter is set on the %1 field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With RecRef FieldRef - Method SetFilterMSExample2 - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3624811066 - Method 3824817660 - NamedType 2476940767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>13 characters</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Text - Method PadString - NamedType Text000</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3624811066 - Method 3824817660 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Four</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Text - Method PadString - NamedType Text001</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3624811066 - Method 3824817660 - NamedType 3752334001" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Before PADSTR is called:\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Text - Method PadString - NamedType Text002</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3624811066 - Method 3824817660 - NamedType 95063322" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&gt;%1&lt; has the length %2\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Text - Method PadString - NamedType Text003</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3624811066 - Method 3824817660 - NamedType 732759939" size-unit="char" translate="yes" xml:space="preserve">
+          <source>&gt;%3&lt; has the length %4\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Text - Method PadString - NamedType Text004</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3624811066 - Method 3824817660 - NamedType 1370456556" size-unit="char" translate="yes" xml:space="preserve">
+          <source>After PADSTR is called:\</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With Text - Method PadString - NamedType Text005</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 61515238 - Method 2657284028 - NamedType 40722887" size-unit="char" translate="yes" xml:space="preserve">
+          <source>https://www.mbank.pl/ajax/currency/getCSV/?id=0</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Work With XML - Method ImportCurrencyRate - NamedType FileUrl</note>
+        </trans-unit>
+        <trans-unit id="Page 3411982962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BE MultiBank Currency Rates</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page BE MultiBank Currency Rates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 4179158116 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Car</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Car - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3921667839 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Configuration by SE</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Configuration by SE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3921667839 - Control 3135334477 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Table ID field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Configuration by SE - Control Table ID - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3921667839 - Control 3808951907 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Table Name field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Configuration by SE - Control Table Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2700369084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>DotNet</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page DotNet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2700369084 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page DotNet - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1112907055 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Interface Example</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Interface Example - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1112907055 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Interface Example - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2867943101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Java Script</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Java Script - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2867943101 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Java Script - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3767050606 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>List With Two table</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page List With Two table - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3293263974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>My Page Notyfication</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page My Page Notyfication - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3293263974 - Method 716454850 - NamedType 2961552353" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vladimir</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page My Page Notyfication - Method OnOpenPage - NamedType Name</note>
+        </trans-unit>
+        <trans-unit id="Page 3293263974 - Method 716454850 - NamedType 3461834954" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Putin</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page My Page Notyfication - Method OnOpenPage - NamedType Description</note>
+        </trans-unit>
+        <trans-unit id="Page 2104513823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Osoba Import</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Osoba Import - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3009316620 - Control 1447994436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Match</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page RegEx Matches - Control Data - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2360649234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RegEx Workbench</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page RegEx Workbench - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2360649234 - Control 3868976738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Input</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page RegEx Workbench - Control InputData - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2360649234 - Control 3482496012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pattern</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page RegEx Workbench - Control Pattern - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2360649234 - Action 3523510231 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Match</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page RegEx Workbench - Action MatchAction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test Page</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Group General Normal Widh</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 2400859765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Field001</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Field001 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 2400859765 - Method 2126772001 - NamedType 1457054730" size-unit="char" translate="yes" xml:space="preserve">
+          <source/>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Field001 - Method OnValidate - NamedType Label</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 1321088724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Wide Group</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Wide Group - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 1763163148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pole obrazkowe 1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Field002 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 1125466531 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pole obrazkowe 2</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Field003 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 487769914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pole obrazkowe 3</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Field004 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 629907935 - Control 4145040593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pole obrazkowe 4</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Test Page - Control Field005 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 469370102 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Update Page From Table</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Update Page From Table - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 469370102 - Control 472338107 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ilość odświeżeń strony</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Update Page From Table - Control Result - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1882657735 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work With CurrFieldNo Page</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With CurrFieldNo Page - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1882657735 - Control 2445482498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>General</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With CurrFieldNo Page - Control General - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1882657735 - Control 3558390861 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Age field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With CurrFieldNo Page - Control Age - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1882657735 - Control 2834327259 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the Age field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With CurrFieldNo Page - Control Age2 - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1882657735 - Control 129688762 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the User Name field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With CurrFieldNo Page - Control User Name - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1882657735 - Control 1911820406 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the value of the User Surname field.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With CurrFieldNo Page - Control User Surname - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2700433526 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Work With User Dialog</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With User Dialog - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2700433526 - Action 3363207381 - Method 1377591017 - NamedType 149879980" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Working... Nr: #1##### wiersza \Procent: @2@@@@@</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Work With User Dialog - Action ShowDialog - Method OnAction - NamedType DialogTxt</note>
+        </trans-unit>
+        <trans-unit id="Report 20127939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Excel Report</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Excel Report - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Query 4148140078 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Query Example</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Query Query Example - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 3411982962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BE MultiBank Currency Rates</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort BE MultiBank Currency Rates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2064540691 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Export To CSV</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort ExportToCSV - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2624941231 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Import Osoba</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Import Osoba - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1522858657 - Action 3075927989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1673401186">
+          <source>OAuth 2.0</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Ext Sales Order - Action OAuth 2.0 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 4041062837 - Action 3384792369 - Method 1377591017 - NamedType 1515281939" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 4041062837">
+          <source>Hekko</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Ext Sales Quote - Action VATStatus - Method OnAction - NamedType TxtMsg</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 17335458 - Field 4285598538 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>My Comunicat Field</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field My Communicat Field - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 17335458 - Field 2229883300 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>My Comunicat Field</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field My Field Test - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 17335458 - Field 1038486870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>My Comunicat Field 2</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field My Field Test 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 17335458 - Field 1077099573 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>My New Document Date</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field My New Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 17335458 - Field 2243540749 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>Sales Header Counter</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field Sales Header Counter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1795418025 - Field 3533253994 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>My Quantity 1</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Line - Field My Quantity 1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1795418025 - Field 1620164143 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>My Quantity 2</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Line - Field My Quantity 2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 872831191 - EnumValue 985328067 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>E-mail Notyfication</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Notyfication Type - EnumValue E-mail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 872831191 - EnumValue 3038616975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SMS Notyfication</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Notyfication Type - EnumValue SMS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 978212879 - EnumValue 985328067 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>E-mail</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Type Notyfication - EnumValue E-mail - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 978212879 - EnumValue 3038616975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SMS</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Type Notyfication - EnumValue SMS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3343753491 - EnumValue 920287221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Combi</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Type Of Car - EnumValue C - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3343753491 - EnumValue 1089196244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hatchback</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Type Of Car - EnumValue H - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3343753491 - EnumValue 2533498501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sport</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Type Of Car - EnumValue S - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3343753491 - EnumValue 271434575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SUV</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Type Of Car - EnumValue SV - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>
