@@ -43,6 +43,11 @@ tableextension 50100 "Ext Sales Header" extends "Sales Header"
                 Rec := RecVariant;
             end;
         }
+        field(50105; "My Picture"; Blob)
+        {
+            Caption = 'My Picture';
+            DataClassification = ToBeClassified;
+        }
     }
 
     trigger OnModify()
