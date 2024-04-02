@@ -75,6 +75,7 @@ codeunit 50152 "OAuth 2.0"
         Response: Text;
         Json: JsonObject;
         JsonToken: JsonToken;
+        JsonValue: JsonValue;
     begin
         //  Adres serwera/zasobu który wygeneruje nam token
         TokenURL := 'https://sso-cert.johndeere.com/oauth2/aus9mimdb1f6lBjCs1t7/v1/token';
@@ -98,8 +99,8 @@ codeunit 50152 "OAuth 2.0"
             Json.ReadFrom(Response);
             Json.Get('access_token', JsonToken);
             if JsonToken.IsValue then begin
-                JsonToken.WriteTo(Token);
-                Token := DelChr(Token, '<>', '"');
+                JsonValue := JsonToken.AsValue();
+                Token := JsonValue.AsText();
             end;
         end;
     end;

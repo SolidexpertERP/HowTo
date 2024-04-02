@@ -154,6 +154,7 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                 PromotedIsBig = true;
                 PromotedCategory = Process;
                 Image = Web;
+                Caption = 'OAuth 2.0';
 
                 trigger OnAction()
                 var
