@@ -35,7 +35,7 @@ codeunit 50152 "OAuth 2.0"
         HttpHeader.Remove('Content-Type');
         HttpHeader.Add('Content-Type', 'application/xml');
         //  Nagłówki jakie dodajemy znajdują się w dokumentacji albo w POSTMAN w konsoli poniższy nagłówek nie jest domyślny jest stricte z dokumentacji więc nie muszę go najpier usuwać
-        HttpHeader.Add('sm_user', '480461');
+        HttpHeader.Add('sm_user', '480461'); //sm_user testowy: tp23126
 
         HttpClient.Post(URL, HttpContent, HttpRespone);
         HttpRespone.Content.ReadAs(Response);
