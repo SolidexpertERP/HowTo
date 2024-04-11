@@ -58,6 +58,7 @@ codeunit 50152 "OAuth 2.0"
             NodeText := Format(XmlNode.AsXmlElement().InnerText);
             Message(NodeText);
         end;
+
     end;
 
 
