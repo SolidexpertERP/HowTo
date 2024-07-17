@@ -593,6 +593,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field My New Document Date - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 17335458 - Field 3640409324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
+          <source>My Picture</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Ext Sales Header - Field My Picture - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 17335458 - Field 2243540749 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Sales Header Counter</source>
           <note from="Developer" annotates="general" priority="2"></note>

@@ -163,6 +163,50 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                     OAuth.OAuth();
                 end;
             }
+            action("Send Email")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Email;
+
+                trigger OnAction()
+                var
+                    Email: Codeunit "Work With Email";
+                begin
+                    Email.SendEmail();
+                end;
+            }
+            action("Send Remider")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Email;
+
+                trigger OnAction()
+                var
+                    IssuedReminderHeader: Record "Issued Reminder Header";
+                begin
+                    IssuedReminderHeader.FindFirst();
+                    IssuedReminderHeader.PrintRecords(false, true, true);
+                    Message('Poszło %1', IssuedReminderHeader."No.");
+                end;
+            }
+            action("Save Report As PDF")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Email;
+
+                trigger OnAction()
+                var
+                    WorkWithReport: Codeunit "Work With Report";
+                begin
+                    WorkWithReport.RunReportWithoutRequestPageAndSaveToPDF();
+                end;
+            }
         }
     }
 
