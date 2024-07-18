@@ -42,6 +42,13 @@ codeunit 50155 "Work With Report"
         Report.SaveAs(Report::"Standard Sales - Pro Forma Inv", Param, ReportFormat::Pdf, OutStr, RecRef);
         TempBlob.CreateInStream(InStr);
         FileName := 'Invoice.pdf';
-        File.DownloadFromStream(InStr, '', '', '', FileName)
+        File.DownloadFromStream(InStr, '', '', '', FileName);
+    end;
+
+    procedure SendDocumentEmail(IssuedReminderHeader: Record "Issued Reminder Header")
+    var
+        CUEmail: Codeunit "Work With Email";
+    begin
+        CUEmail.SendEmailSalesOrderPDF(IssuedReminderHeader);
     end;
 }
