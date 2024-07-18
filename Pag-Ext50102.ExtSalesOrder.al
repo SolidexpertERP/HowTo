@@ -193,6 +193,20 @@ pageextension 50102 "Ext Sales Order" extends "Sales Order"
                     Message('Poszło %1', IssuedReminderHeader."No.");
                 end;
             }
+            action("Show Report Param")
+            {
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                Image = Email;
+
+                trigger OnAction()
+                var
+                    WorkWithReport: Codeunit "Work With Report";
+                begin
+                    WorkWithReport.GetReportParams();
+                end;
+            }
             action("Save Report As PDF")
             {
                 Promoted = true;

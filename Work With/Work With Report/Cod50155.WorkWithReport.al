@@ -37,9 +37,8 @@ codeunit 50155 "Work With Report"
 
         // Parametry pobrane z funkcji GetReportParams
         Param := StrSubstNo('<?xml version="1.0" standalone="yes"?><ReportParameters name="Standard Sales - Pro Forma Inv" id="1302"><DataItems><DataItem name="Header">VERSION(1) SORTING(Field1,Field3) WHERE(Field3=1(%1))</DataItem><DataItem name="Line">VERSION(1) SORTING(Field3,Field4)</DataItem><DataItem name="WorkDescriptionLines">VERSION(1) SORTING(Field1)</DataItem><DataItem name="Totals">VERSION(1) SORTING(Field1)</DataItem></DataItems></ReportParameters>', DocumentNo);
-
         TempBlob.CreateOutStream(OutStr);
-        Report.SaveAs(Report::"Standard Sales - Pro Forma Inv", Param, ReportFormat::Pdf, OutStr, RecRef);
+        Report.SaveAs(Report::"Standard Sales - Pro Forma Inv", Param, ReportFormat::Pdf, OutStr);
         TempBlob.CreateInStream(InStr);
         FileName := 'Invoice.pdf';
         File.DownloadFromStream(InStr, '', '', '', FileName);
